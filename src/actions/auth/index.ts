@@ -1,8 +1,5 @@
-'use server'
-
-import { client } from '@/lib/prisma'
-
-
+"use server";
+import { client } from "@/lib/prisma";
 export const onCompleteUserRegistration = async (
   fullname: string,
   clerkId: string,
@@ -23,13 +20,11 @@ export const onCompleteUserRegistration = async (
         id: true,
         type: true,
       },
-    })
-
+    });
     if (registered) {
-      return { status: 200, user: registered }
+      return { status: 200, user: registered };
     }
   } catch (error) {
-    return { status: 400 }
+    return { status: 400 };
   }
-}
-
+};
